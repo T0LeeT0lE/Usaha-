@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nota Belanja</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h2>Nota Belanja</h2>
+
+  <div class="input-group">
+    <label>Uang untuk kembalian (Rp): <input type="text" id="uangKembalian" oninput="formatAndCalculate()" /></label>
+    <label>Pendapatan total (Rp): <input type="text" id="pendapatanTotal" oninput="formatAndCalculate()" /></label>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Barang yang dibeli</th>
+        <th>Total harga yang dibeli (Rp)</th>
+      </tr>
+    </thead>
+    <tbody id="belanjaan"></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><strong>Total habis belanja</strong></td>
+        <td id="totalBelanja">Rp 0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div id="infoTambahan">
+    <p>Telor per porsi: Rp 15.000</p>
+    <p>Double telor: Rp 18.000</p>
+    <p>Nasi goreng spesial: Rp 20.000</p>
+    <label>No. Pesanan: <input type="text" id="noPesanan" /></label>
+  </div>
+
+  <div id="hasil">
+    <strong>Sisa uang untuk kembalian:</strong> <span id="kembalian">Rp 0</span><br />
+    <strong>Waktu dan Tanggal:</strong> <span id="waktu"></span>
+  </div>
+
+  <button onclick="generatePNG()" id="downloadBtn">Download PNG</button>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="scriptapp.js"></script>
+</body>
+</html>
